@@ -16,7 +16,7 @@ def get_projects():
 
 # Home Page
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'index.html')
 
 # About Page
 def about(request):

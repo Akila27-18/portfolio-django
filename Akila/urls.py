@@ -20,7 +20,7 @@ from django.http import HttpResponse
 from . import views
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('', views.home, name='index'),
     path('about/', views.about, name='about'),
     path('projects/', views.projects_page, name='projects_page'),
     path('contact/', views.contact, name='contact'),
