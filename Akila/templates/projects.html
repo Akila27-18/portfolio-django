@@ -1,0 +1,27 @@
+
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-5 p-4 rounded">
+  <h2 class="text-center mb-4 text-light">🌟 My Featured Projects</h2>
+  
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for project in projects %}
+    <div class="col">
+      <div class="card h-100 shadow-sm project-card animate__animated animate__fadeInUp">
+        <img src="{% static 'images/'|add:project.image %}" class="card-img-top" alt="{{ project.name }}">
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ project.name }}</h5>
+          <a href="{{ project.url }}" target="_blank" class="btn btn-outline-primary mt-3">🔗 View Project</a>
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <p class="text-light text-center">No projects found.</p>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

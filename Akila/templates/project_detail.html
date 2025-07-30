@@ -1,0 +1,18 @@
+<!-- templates/project_detail.html -->
+{% extends "base.html" %}
+{%load static%}
+
+{% block content %}
+<div class="container mt-5">
+  <h2 class="text-center">{{ project.name }}</h2>
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-8">
+      <div class="card shadow p-4">
+        <p><strong>Description:</strong> {{ project.description }}</p>
+        <p><strong>Tags:</strong> {{ project.tags | join(', ') }}</p>
+        <a href="{{ project.url }}" target="_blank" class="btn btn-primary mt-3">Visit Project</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

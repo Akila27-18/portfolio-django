@@ -1,0 +1,59 @@
+<!-- templates/contact.html -->
+{% extends "base.html" %}
+{%load static%}
+
+
+{% block content %}
+<div class="container py-5">
+  <h2 class="text-center text-primary mb-4">Contact Me</h2>
+
+  <!-- Contact Info Section -->
+  <div class="row text-center mb-5">
+    <div class="col-md-4 mb-4">
+      <i class='bx bxs-phone-call bx-spin' style='color:#ff6347; font-size: 40px;'></i>
+      <h5 class="mt-2"><strong>Phone:</strong></h5>
+      <p>+91-9876543210</p>
+    </div>
+    <div class="col-md-4 mb-4">
+      <i class='bx bxs-envelope bx-tada' style='color:#ff6347; font-size: 40px;'></i>
+      <h5 class="mt-2"><strong>Email:</strong></h5>
+      <p><a href="mailto:akila271819@gmail.com">akila271819@gmail.com</a></p>
+    </div>
+    <div class="col-md-4 mb-4">
+      <i class='bx bx-location-plus bx-flashing' style='color:#ff6347; font-size: 40px;'></i>
+      <h5 class="mt-2"><strong>Address:</strong></h5>
+      <p>Chennai, Tamil Nadu, India</p>
+    </div>
+  </div>
+
+  <!-- Contact Form Section -->
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <form method="POST" action="{% url 'contact' %}">
+        {% csrf_token %}
+        <!-- your form fields here -->
+      
+      
+        <div class="mb-3">
+          <label for="name" class="form-label">Your Name</label>
+          <input type="text" name="name" class="form-control" id="name" required placeholder="Enter your name">
+        </div>
+        
+        <div class="mb-3">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" name="email" class="form-control" id="email" required placeholder="Enter your email">
+        </div>
+        
+        <div class="mb-3">
+          <label for="message" class="form-label">Your Message</label>
+          <textarea name="message" class="form-control" id="message" rows="5" required placeholder="Write your message here"></textarea>
+        </div>
+        
+        <div class="d-grid">
+          <button type="submit" class="btn btn-success">Send Message</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

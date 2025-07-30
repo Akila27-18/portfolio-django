@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{%load static%}
+
+{% block content %}
+<div class="container mt-5">
+  <h2 class="text-center mb-4">About Me</h2>
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <img src="{% static 'images/profile.png' %}" 
+      alt="Profile" 
+      class="img-fluid rounded-circle shadow" 
+      style="width: 300px; height: 300px; object-fit: cover;">
+     </div>
+    <div class="col-md-6">
+      <h3>Hello! I'm <strong>Akila C</strong>, a passionate Python Full-Stack Trainee with experience in developing dynamic web applications. I love transforming ideas into real-life projects that are user-friendly and elegant.</h3>
+      <h4>I specialize in backend development using Python and Flask, and I have a solid understanding of frontend technologies like HTML, CSS, JavaScript, and Bootstrap.</h4>
+    </div>
+  </div>
+
+  <!-- Skills Section -->
+  <section id="skills" class="mt-5">
+    <h3 style="background-color: #ff6347; font-size: 32px; font-weight: bold; text-align: center; color:black; box-shadow: 4px 4px 6px orangered; border-radius: 10px;">
+      <i class="fas fa-chart-line"></i> Skills
+    </h3>
+    <div class="skills mt-4">
+      <div class="skill-bar mb-2">
+        <span>Python</span>
+        <div class="bar bg-primary" style="width: 80%; height: 20px; border-radius: 5px;"></div>
+      </div>
+      <div class="skill-bar mb-2">
+        <span>JavaScript</span>
+        <div class="bar bg-warning" style="width: 90%; height: 20px; border-radius: 5px;"></div>
+      </div>
+      <div class="skill-bar mb-2">
+        <span>HTML</span>
+        <div class="bar bg-success" style="width: 90%; height: 20px; border-radius: 5px;"></div>
+      </div>
+      <div class="skill-bar mb-2">
+        <span>CSS</span>
+        <div class="bar bg-info" style="width: 90%; height: 20px; border-radius: 5px;"></div>
+      </div>
+      <div class="skill-bar mb-2">
+        <span>Tkinter</span>
+        <div class="bar bg-secondary" style="width: 75%; height: 20px; border-radius: 5px;"></div>
+      </div>
+      <div class="skill-bar mb-2">
+        <span>SQL</span>
+        <div class="bar bg-danger" style="width: 90%; height: 20px; border-radius: 5px;"></div>
+      </div>
+      <div class="skill-bar mb-2">
+        <span>FLASK</span>
+        <div class="bar bg-success" style="width: 50%; height: 20px; border-radius: 5px;"></div>
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}
