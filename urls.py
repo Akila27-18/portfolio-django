@@ -1,7 +1,14 @@
 from django.contrib import admin
 from django.urls import path, include
 
+from django.conf import settings
+from django.conf.urls.static import static  # ✅ Needed for static/media in dev
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('Akila.urls')),  # replace 'yourapp' with your Django app name
+    path('', include('portfoilio.urls')),  # ✅ Replace 'portfolio' with your actual app name if different
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
